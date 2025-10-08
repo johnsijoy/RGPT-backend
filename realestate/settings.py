@@ -165,4 +165,4 @@ SIMPLE_JWT = {
 # =========================
 CORS_ALLOW_ALL_ORIGINS = False  # Development only
 # OR, for stricter control:
-CORS_ALLOWED_ORIGINS = ["https://rgpt-frontend.vercel.app"]
+CORS_ALLOWED_ORIGINS = ["https://rgpt-frontend-ym2m.vercel.app"]
