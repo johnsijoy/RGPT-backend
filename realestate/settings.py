@@ -15,10 +15,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # =========================
 # GIS LIBRARIES (Windows, OSGeo4W)
 # =========================
-GDAL_LIBRARY_PATH = r"C:\Users\HP\AppData\Local\Programs\OSGeo4W\bin\gdal311.dll"
-GEOS_LIBRARY_PATH = r"C:\Users\HP\AppData\Local\Programs\OSGeo4W\bin\geos_c.dll"
-os.environ["PROJ_LIB"] = r"C:\Users\HP\AppData\Local\Programs\OSGeo4W\share\proj"
-
+if os.getenv("RENDER", "False") == "True":
+    # Linux deployment (Render)
+    pass
+else:
+    # Windows local dev
+    GDAL_LIBRARY_PATH = r"C:\Users\HP\AppData\Local\Programs\OSGeo4W\bin\gdal311.dll"
+    GEOS_LIBRARY_PATH = r"C:\Users\HP\AppData\Local\Programs\OSGeo4W\bin\geos_c.dll"
+    os.environ["PROJ_LIB"] = r"C:\Users\HP\AppData\Local\Programs\OSGeo4W\share\proj"
 # =========================
 # SECURITY
 # =========================
