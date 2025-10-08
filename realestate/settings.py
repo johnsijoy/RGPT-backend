@@ -64,6 +64,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -162,6 +163,6 @@ SIMPLE_JWT = {
 # =========================
 # CORS (Frontend integration)
 # =========================
-CORS_ALLOW_ALL_ORIGINS = True  # Development only
+CORS_ALLOW_ALL_ORIGINS = False  # Development only
 # OR, for stricter control:
 CORS_ALLOWED_ORIGINS = ["https://rgpt-frontend.vercel.app"]
