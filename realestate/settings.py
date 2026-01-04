@@ -7,6 +7,7 @@ from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
 
+
 # Load environment variables from .env
 load_dotenv()
 
@@ -95,16 +96,15 @@ WSGI_APPLICATION = 'realestate.wsgi.application'
 # DATABASE (PostGIS)
 # =========================
 DATABASES = {
-   'default': {
+    'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'rgpt_db',
-        'USER': 'postgres',
-        'PASSWORD': 'rgpt',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.environ.get("DB_NAME"),
+        'USER': os.environ.get("DB_USER"),
+        'PASSWORD': os.environ.get("DB_PASSWORD"),
+        'HOST': os.environ.get("DB_HOST"),
+        'PORT': os.environ.get("DB_PORT"),
     }
 }
-
 
 # =========================
 # PASSWORD VALIDATORS
