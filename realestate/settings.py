@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     
 
     # GeoDjango
-    'channels',
     'django.contrib.gis',
     'rest_framework_gis',
    
