@@ -34,6 +34,7 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(',')
 # INSTALLED APPS
 # =========================
 INSTALLED_APPS = [
+     'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,7 +52,7 @@ INSTALLED_APPS = [
     # Third-party
     'rest_framework',
     'django_filters',
-    'corsheaders',
+
 
     # Local app
     'inventory.apps.InventoryConfig',
@@ -61,7 +62,7 @@ INSTALLED_APPS = [
 # MIDDLEWARE
 # =========================
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',  # must be first
+    'corsheaders.middleware.CorsMiddleware',  
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -162,6 +163,14 @@ SIMPLE_JWT = {
 # =========================
 # CORS (Frontend integration)
 # =========================
-CORS_ALLOW_ALL_ORIGINS = False  # Development only
-# OR, for stricter control:
-CORS_ALLOWED_ORIGINS = ["https://rgpt-frontend-ym2m.vercel.app"]
+CORS_ALLOW_ALL_ORIGINS = False
+
+CORS_ALLOWED_ORIGINS = [
+    "https://rgpt-frontend-ym2m.vercel.app",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://rgpt-frontend-ym2m.vercel.app",
+]
+
+CORS_ALLOW_CREDENTIALS = True
