@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     
 
     # GeoDjango
+    'channels',
     'django.contrib.gis',
     'rest_framework_gis',
    
@@ -94,12 +95,12 @@ WSGI_APPLICATION = 'realestate.wsgi.application'
 # DATABASE (PostGIS)
 # =========================
 DATABASES = {
-    'default': {
+   'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'realestate_db_86l1',
-        'USER': 'realestate_db_86l1_user',
-        'PASSWORD': 'Q8fSpQWmWu249O5tPRK72yOMHLLWDaEW',
-        'HOST': 'dpg-d3iqv795pdvs7395t6s0-a.oregon-postgres.render.com',
+        'NAME': 'rgpt_db',
+        'USER': 'postgres',
+        'PASSWORD': 'rgpt',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
